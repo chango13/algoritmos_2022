@@ -98,6 +98,18 @@ def busqueda_sec(vector, buscado):
         return busqueda_sec(vector[:-1], buscado)
 
 
+def busqueda_binaria(vector, buscado, primero, ultimo):
+        med = (primero + ultimo) // 2
+        if(primero > ultimo):
+            return -1
+        if(buscado == vector[med]):
+            return med
+        elif(vector[med] < buscado):    
+              busqueda_binaria(vector, buscado, med + 1, ultimo)
+        else:
+               busqueda_binaria(vector, buscado, primero, med - 1)
+
 
 print(buscar(vec, 71, 0))
 print(busqueda_sec(vec, 70))
+print("Posicion: ", busqueda_binaria(vec, 4, 0, len(vec)-1))
