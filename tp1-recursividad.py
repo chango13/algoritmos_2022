@@ -12,7 +12,7 @@ def conversion(romano):
         return dec
 
 
-print(conversion('IV'))
+print(conversion('DXXVII'))
 
     
         
@@ -26,9 +26,21 @@ print(conversion('IV'))
 #car para encontrarlo;
 #c. Utilizar un vector para representar la mochila.
 
+mochila = ['mapa', 'botella', 'cuchillo', 'pistola', 'encendedor', 'brujula', 'sable de luz', 'foto de yoda']
+
+def usarLaFuerza(vector, buscado, indice):
+        if(indice == len(vector)):
+            return -1
+        elif(buscado == vector[indice]):
+                print ('Elemento encontrado en la posicion : ', indice +1)
+                print('Cantidad de items que tuvimos que sacar: ', indice)
+                return "buen trabajo!"         
+        else:
+            return usarLaFuerza(vector, buscado, indice+1)
+        
 
 
-
+print(usarLaFuerza(mochila, "sable de luz", 0))
 
 #23. Salida del laberinto. Encontrar un camino que permita salir de un laberinto definido en una
 #matriz de [n x n], solo se puede mover de a una casilla a la vez –no se puede mover en diagonal–
